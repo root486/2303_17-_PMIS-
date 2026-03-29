@@ -1,0 +1,130 @@
+2026-03-29 18:32:52.135 [main] INFO  com.itheima.TliasWebManagementApplication-Starting TliasWebManagementApplication using Java 17.0.17 with PID 2956 (D:\JAVAweb\web-ai-project02\tlias-web-management\target\classes started by 27628 in D:\JAVAweb\web-ai-project02)
+2026-03-29 18:32:52.137 [main] INFO  com.itheima.TliasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2026-03-29 18:32:53.285 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-03-29 18:32:53.306 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-29 18:32:53.308 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-03-29 18:32:53.309 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-29 18:32:53.412 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-03-29 18:32:53.413 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1222 ms
+2026-03-29 18:32:54.052 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-03-29 18:32:54.077 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-03-29 18:32:54.086 [main] INFO  com.itheima.TliasWebManagementApplication-Started TliasWebManagementApplication in 2.504 seconds (process running for 3.608)
+2026-03-29 18:33:25.506 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 18:33:26.983 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-03-29 18:44:12.791 [main] INFO  com.itheima.TliasWebManagementApplication-Starting TliasWebManagementApplication using Java 17.0.17 with PID 19064 (D:\JAVAweb\web-ai-project02\tlias-web-management\target\classes started by 27628 in D:\JAVAweb\web-ai-project02)
+2026-03-29 18:44:12.794 [main] INFO  com.itheima.TliasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2026-03-29 18:44:13.849 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-03-29 18:44:13.864 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-29 18:44:13.867 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-03-29 18:44:13.867 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-29 18:44:13.950 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-03-29 18:44:13.952 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1111 ms
+2026-03-29 18:44:14.523 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-03-29 18:44:14.550 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-03-29 18:44:14.560 [main] INFO  com.itheima.TliasWebManagementApplication-Started TliasWebManagementApplication in 2.267 seconds (process running for 3.159)
+2026-03-29 18:45:17.618 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29 18:45:17.619 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-03-29 18:45:17.621 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 1 ms
+2026-03-29 18:45:30.278 [http-nio-8080-exec-3] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:30.309 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-03-29 18:45:30.953 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69663c17
+2026-03-29 18:45:30.958 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-03-29 18:45:34.849 [http-nio-8080-exec-5] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:41.001 [http-nio-8080-exec-7] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:41.705 [http-nio-8080-exec-8] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:42.084 [http-nio-8080-exec-10] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:42.723 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:43.063 [http-nio-8080-exec-2] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:43.808 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:45:44.088 [http-nio-8080-exec-5] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:46:08.223 [http-nio-8080-exec-2] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:48:10.234 [http-nio-8080-exec-8] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:48:10.851 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:48:11.312 [http-nio-8080-exec-9] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:48:21.990 [http-nio-8080-exec-7] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:28.567 [http-nio-8080-exec-5] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:28.746 [http-nio-8080-exec-10] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:29.101 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:29.489 [http-nio-8080-exec-2] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:29.732 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:30.329 [http-nio-8080-exec-3] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:31.052 [http-nio-8080-exec-7] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:33.892 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:34.568 [http-nio-8080-exec-8] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:44.449 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:46.814 [http-nio-8080-exec-9] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:47.054 [http-nio-8080-exec-7] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:47.373 [http-nio-8080-exec-6] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:47.565 [http-nio-8080-exec-10] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:47.841 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:49.728 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:50.069 [http-nio-8080-exec-2] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:50.398 [http-nio-8080-exec-7] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:50.765 [http-nio-8080-exec-3] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:51.084 [http-nio-8080-exec-5] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:51.425 [http-nio-8080-exec-10] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:51.751 [http-nio-8080-exec-8] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:52.005 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:57.005 [http-nio-8080-exec-9] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:49:57.330 [http-nio-8080-exec-7] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:04.970 [http-nio-8080-exec-6] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:05.484 [http-nio-8080-exec-5] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:06.424 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:06.790 [http-nio-8080-exec-8] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:07.828 [http-nio-8080-exec-2] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:08.139 [http-nio-8080-exec-9] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:18.848 [http-nio-8080-exec-6] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:20.603 [http-nio-8080-exec-3] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:23.268 [http-nio-8080-exec-10] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:50:24.125 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:52:25.608 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 18:52:27.043 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-03-29 18:52:27.047 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-03-29 18:52:27.055 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-03-29 18:53:17.919 [main] INFO  com.itheima.TliasWebManagementApplication-Starting TliasWebManagementApplication using Java 17.0.17 with PID 27204 (D:\JAVAweb\web-ai-project02\tlias-web-management\target\classes started by 27628 in D:\JAVAweb\web-ai-project02)
+2026-03-29 18:53:17.922 [main] INFO  com.itheima.TliasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2026-03-29 18:53:18.927 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-03-29 18:53:18.940 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-29 18:53:18.943 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-03-29 18:53:18.943 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-29 18:53:19.024 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-03-29 18:53:19.025 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1060 ms
+2026-03-29 18:53:19.543 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-03-29 18:53:19.567 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-03-29 18:53:19.575 [main] INFO  com.itheima.TliasWebManagementApplication-Started TliasWebManagementApplication in 2.154 seconds (process running for 3.139)
+2026-03-29 18:53:23.174 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29 18:53:23.174 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-03-29 18:53:23.176 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-03-29 18:53:23.239 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:53:23.279 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-03-29 18:53:23.825 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e9a8df9
+2026-03-29 18:53:23.828 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-03-29 18:54:04.656 [http-nio-8080-exec-3] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 18:54:26.297 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 18:54:27.876 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-03-29 18:54:27.880 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-03-29 18:54:27.888 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
+2026-03-29 19:48:17.451 [main] INFO  com.itheima.TliasWebManagementApplication-Starting TliasWebManagementApplication using Java 17.0.17 with PID 27756 (D:\JAVAweb\web-ai-project02\tlias-web-management\target\classes started by 27628 in D:\JAVAweb\web-ai-project02)
+2026-03-29 19:48:17.453 [main] INFO  com.itheima.TliasWebManagementApplication-No active profile set, falling back to 1 default profile: "default"
+2026-03-29 19:48:18.654 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat initialized with port 8080 (http)
+2026-03-29 19:48:18.674 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Initializing ProtocolHandler ["http-nio-8080"]
+2026-03-29 19:48:18.677 [main] INFO  org.apache.catalina.core.StandardService-Starting service [Tomcat]
+2026-03-29 19:48:18.677 [main] INFO  org.apache.catalina.core.StandardEngine-Starting Servlet engine: [Apache Tomcat/10.1.52]
+2026-03-29 19:48:18.777 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring embedded WebApplicationContext
+2026-03-29 19:48:18.777 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext-Root WebApplicationContext: initialization completed in 1270 ms
+2026-03-29 19:48:19.423 [main] INFO  org.apache.coyote.http11.Http11NioProtocol-Starting ProtocolHandler ["http-nio-8080"]
+2026-03-29 19:48:19.448 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer-Tomcat started on port 8080 (http) with context path '/'
+2026-03-29 19:48:19.459 [main] INFO  com.itheima.TliasWebManagementApplication-Started TliasWebManagementApplication in 2.584 seconds (process running for 3.79)
+2026-03-29 19:48:53.146 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/]-Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-29 19:48:53.146 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Initializing Servlet 'dispatcherServlet'
+2026-03-29 19:48:53.148 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet-Completed initialization in 2 ms
+2026-03-29 19:48:53.214 [http-nio-8080-exec-1] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 19:48:53.251 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Starting...
+2026-03-29 19:48:53.964 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.pool.HikariPool-HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e9a8df9
+2026-03-29 19:48:53.969 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Start completed.
+2026-03-29 19:48:54.154 [http-nio-8080-exec-3] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 19:48:54.172 [http-nio-8080-exec-4] INFO  com.itheima.controller.Deptcontroller-查询全部部门数据
+2026-03-29 19:49:00.192 [SpringApplicationShutdownHook] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-29 19:49:01.640 [tomcat-shutdown] INFO  o.s.boot.web.embedded.tomcat.GracefulShutdown-Graceful shutdown complete
+2026-03-29 19:49:01.642 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown initiated...
+2026-03-29 19:49:01.650 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource-HikariPool-1 - Shutdown completed.
