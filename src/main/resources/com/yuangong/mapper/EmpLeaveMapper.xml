@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuangong.mapper.EmpLeaveMapper">
+
+    <!--条件分页查询请假记录-->
+    <select id="list" resultType="com.yuangong.pojo.EmpLeave">
+        select el.id, el.emp_id, e.name as emp_name, el.leave_type, el.begin_date, el.end_date,
+               el.reason, el.status, el.approver_id, el.approve_time,
+               el.create_time, el.update_time
+        from emp_leave el
+        left join emp e on el.emp_id = e.id
+        <where>
+            <if test="name != null and name != ''">
+                e.name like concat('%', #{name}, '%')
+            </if>
+            <if test="leaveType != null">
+                and el.leave_type = #{leaveType}
+            </if>
+            <if test="status != null">
+                and el.status = #{status}
+            </if>
+            <if test="begin != null and end != null">
+                and el.begin_date between #{begin} and #{end}
+            </if>
+        </where>
+        order by el.create_time desc
+    </select>
+
+    <!--审批请假-->
+    <update id="approve">
+        update emp_leave
+        set status = #{status},
+            approver_id = #{approverId},
+            approve_time = #{approveTime},
+            update_time = #{updateTime}
+        where id = #{id}
+    </update>
+
+    <!--批量删除请假记录-->
+    <delete id="deleteByIds">
+        delete from emp_leave where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

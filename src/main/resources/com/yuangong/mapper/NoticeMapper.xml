@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuangong.mapper.NoticeMapper">
+
+    <!--条件查询公告-->
+    <select id="list" resultType="com.yuangong.pojo.Notice">
+        select id, title, content, publisher_id, create_time, update_time
+        from notice
+        <where>
+            <if test="title != null and title != ''">
+                title like concat('%', #{title}, '%')
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+
+    <!--修改公告-->
+    <update id="update">
+        update notice
+        <set>
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="content != null and content != ''">content = #{content},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--批量删除公告-->
+    <delete id="deleteByIds">
+        delete from notice where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
