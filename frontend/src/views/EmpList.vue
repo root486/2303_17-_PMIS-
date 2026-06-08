@@ -39,10 +39,12 @@
         <el-table-column prop="phone" label="手机号" width="130" />
         <el-table-column prop="salary" label="薪资" width="100" />
         <el-table-column prop="entryDate" label="入职日期" width="120" />
-        <el-table-column label="操作" width="120" fixed="right">
+        <el-table-column label="操作" width="140" fixed="right">
           <template #default="{ row }">
-            <el-button type="primary" size="small" @click="openEdit(row)">编辑</el-button>
-            <el-button type="danger" size="small" @click="handleDelete(row.id)">删除</el-button>
+            <div class="action-btns">
+              <el-button type="primary" size="small" @click="openEdit(row)">编辑</el-button>
+              <el-button type="danger" size="small" @click="handleDelete(row.id)">删除</el-button>
+            </div>
           </template>
         </el-table-column>
       </el-table>
@@ -218,3 +220,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+</style>

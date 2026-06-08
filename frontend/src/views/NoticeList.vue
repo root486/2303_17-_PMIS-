@@ -23,10 +23,12 @@
         <el-table-column prop="title" label="标题" min-width="200" />
         <el-table-column prop="content" label="内容" min-width="300" show-overflow-tooltip />
         <el-table-column prop="createTime" label="发布时间" width="180" />
-        <el-table-column label="操作" width="120" fixed="right">
+        <el-table-column label="操作" width="140" fixed="right">
           <template #default="{ row }">
-            <el-button type="primary" size="small" @click="openEdit(row)">编辑</el-button>
-            <el-button type="danger" size="small" @click="handleDelete(row.id)">删除</el-button>
+            <div class="action-btns">
+              <el-button type="primary" size="small" @click="openEdit(row)">编辑</el-button>
+              <el-button type="danger" size="small" @click="handleDelete(row.id)">删除</el-button>
+            </div>
           </template>
         </el-table-column>
       </el-table>
@@ -139,3 +141,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.action-btns {
+  display: flex;
+  gap: 6px;
+}
+</style>

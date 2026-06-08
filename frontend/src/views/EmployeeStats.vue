@@ -25,6 +25,20 @@
         </el-card>
       </el-col>
     </el-row>
+
+    <!-- 部门人数分布 -->
+    <el-row :gutter="24" style="margin-top: 24px;">
+      <el-col :span="24">
+        <el-card shadow="hover">
+          <template #header>
+            <div class="card-header">
+              <span>各部门人数分布</span>
+            </div>
+          </template>
+          <div ref="deptChartRef" style="height: 350px;"></div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -39,18 +53,22 @@ export default {
   data() {
     return {
       jobChart: null,
-      genderChart: null
+      genderChart: null,
+      deptChart: null
     }
   },
   mounted() {
     this.initJobChart()
     this.initGenderChart()
+    this.initDeptChart()
     this.loadJobData()
     this.loadGenderData()
+    this.loadDeptData()
   },
   beforeUnmount() {
     if (this.jobChart) this.jobChart.dispose()
     if (this.genderChart) this.genderChart.dispose()
+    if (this.deptChart) this.deptChart.dispose()
   },
   methods: {
     initJobChart() {
@@ -58,6 +76,9 @@ export default {
     },
     initGenderChart() {
       this.genderChart = echarts.init(this.$refs.genderChartRef)
+    },
+    initDeptChart() {
+      this.deptChart = echarts.init(this.$refs.deptChartRef)
     },
     async loadJobData() {
       try {
@@ -124,6 +145,38 @@ export default {
         }
       } catch (e) {
         console.error('加载性别数据失败', e)
+      }
+    },
+    async loadDeptData() {
+      try {
+        const res = await axios.get(`${API_BASE}/report/empDeptData`)
+        if (res.data.code === 1) {
+          const deptData = res.data.data
+          const names = deptData.map(item => item.name)
+          const values = deptData.map(item => item.value)
+          this.deptChart.setOption({
+            title: { text: '各部门员工分布', left: 'center', textStyle: { fontSize: 16 } },
+            tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+            grid: { left: '3%', right: '8%', bottom: '3%', containLabel: true },
+            xAxis: { type: 'value', name: '人数', minInterval: 1 },
+            yAxis: { type: 'category', data: names, inverse: true },
+            series: [{
+              name: '人数',
+              type: 'bar',
+              data: values,
+              barWidth: '50%',
+              label: { show: true, position: 'right' },
+              itemStyle: {
+                color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+                  { offset: 0, color: '#67c23a' },
+                  { offset: 1, color: '#b3e19d' }
+                ])
+              }
+            }]
+          })
+        }
+      } catch (e) {
+        console.error('加载部门数据失败', e)
       }
     }
   }

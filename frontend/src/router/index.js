@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '../views/Layout.vue'
 import Login from '../views/Login.vue'
+import Dashboard from '../views/Dashboard.vue'
 import EmployeeStats from '../views/EmployeeStats.vue'
 
 const routes = [
@@ -12,8 +13,14 @@ const routes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/stats',
+    redirect: '/dashboard',
     children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: Dashboard,
+        meta: { title: '工作台' }
+      },
       {
         path: 'stats',
         name: 'EmployeeStats',
