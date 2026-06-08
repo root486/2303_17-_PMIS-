@@ -54,6 +54,11 @@ public interface EmpMapper {
     List<Map<String, Object>> countEmpGenderData();
 
     /**
+     * 统计各部门员工人数
+     */
+    List<Map<String, Object>> countEmpDeptData();
+
+    /**
      * 查询全部员工
      */
     @Select("select id, username, password, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time from emp")

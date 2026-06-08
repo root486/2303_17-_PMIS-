@@ -15,4 +15,9 @@ public interface ReportService {
      * 统计员工性别人数
      */
     List<Map<String, Object>> getEmpGenderData();
+
+    /**
+     * 统计各部门员工人数
+     */
+    List<Map<String, Object>> getEmpDeptData();
 }

@@ -1,6 +1,6 @@
 # 员工管理系统
 
-基于 Spring Boot + Vue 3 的全栈 Web 应用，涵盖登录认证、员工管理、部门管理、请假审批、公告管理及数据统计报表六大功能模块，支持 JWT 令牌认证与角色化操作。
+基于 Spring Boot + Vue 3 的全栈 Web 应用，涵盖登录认证、工作台仪表盘、员工管理、部门管理、请假审批、公告管理及数据统计报表七大功能模块，支持 JWT 令牌认证与角色化操作。
 
 ---
 
@@ -10,7 +10,7 @@
 该目录是项目源代码的核心存放位置，包含项目全部业务逻辑与功能实现代码。后端采用 Java 语言，基于 Spring Boot 框架进行分层开发，子包按功能拆分：controller 层负责接收 HTTP 请求与参数校验，service 层封装业务逻辑，mapper 层对接 MyBatis 实现数据库持久化操作，pojo 层定义实体类与查询参数对象，filter 层提供 JWT 认证拦截，exception 层统一处理全局异常与业务异常。
 
 ### 2. frontend（前端目录）
-该目录为 Vue 3 前端工程，基于 Vite 构建工具开发。src/views 目录存放各功能页面组件，包括登录页（Login.vue）、主布局（Layout.vue）、员工信息统计页（EmployeeStats.vue）、员工管理页（EmpList.vue）、部门管理页（DeptList.vue）、请假管理页（LeaveList.vue）、公告管理页（NoticeList.vue）；src/router 目录配置 Vue Router 路由与登录守卫，未登录自动跳转登录页；src/components 目录封装公共组件；src/assets 目录存放静态资源（图标、样式文件）；main.js 为入口文件，集成 Element Plus 组件库与 Axios 拦截器，自动在请求头携带 JWT 令牌。
+该目录为 Vue 3 前端工程，基于 Vite 构建工具开发。src/views 目录存放各功能页面组件，包括登录页（Login.vue）、主布局（Layout.vue）、工作台仪表盘（Dashboard.vue）、员工信息统计页（EmployeeStats.vue）、员工管理页（EmpList.vue）、部门管理页（DeptList.vue）、请假管理页（LeaveList.vue）、公告管理页（NoticeList.vue）；src/router 目录配置 Vue Router 路由与登录守卫，登录后默认进入工作台，未登录自动跳转登录页；src/components 目录封装公共组件；src/assets 目录存放静态资源（图标、样式文件）；main.js 为入口文件，集成 Element Plus 组件库与 Axios 拦截器，自动在请求头携带 JWT 令牌。
 
 ### 3. config（配置文件目录）
 存放项目的所有配置文件。后端配置文件集中位于 src/main/resources 目录下，application.yml 负责数据库连接信息（数据库地址、端口、账号密码）及服务器运行参数（如服务端口号），logback.xml 配置日志输出格式与级别；WebConfig.java 位于 config 包中，负责跨域请求等 Web 层全局配置。前端配置文件包括 vite.config.js（Vite 构建配置与开发环境 API 代理）和 package.json（依赖声明与脚本命令）。
@@ -39,12 +39,13 @@
 
 | 模块 | 说明 |
 |------|------|
-| 登录认证 | JWT 令牌认证，TokenFilter 全局拦截，无令牌或令牌无效返回 401，前端自动跳转登录页 |
+| 登录认证 | JWT 令牌认证，TokenFilter 全局拦截，无令牌或令牌无效返回 401，前端自动跳转登录页。Header 显示当前用户姓名，支持退出登录 |
+| 工作台仪表盘 | 登录后首页，展示员工总数、部门总数、待审批请假数、公告总数四大统计卡片，以及近期公告列表和近期请假动态 |
 | 员工管理 | 按姓名/性别/入职日期搜索、分页展示、新增/编辑员工（含工作经历）、批量删除 |
 | 部门管理 | 部门列表展示、新增/编辑/删除（删除前检测是否有关联员工） |
 | 请假管理 | 管理者代员工提交请假申请、按姓名/类型/状态搜索、审批（批准/拒绝）、批量删除 |
 | 公告管理 | 发布/编辑公司公告、按标题搜索、分页展示、批量删除 |
-| 数据统计报表 | ECharts 可视化图表展示员工性别分布与各职位人数占比 |
+| 数据统计报表 | ECharts 可视化图表：职位人数柱状图、性别占比环形图、各部门人数分布横向柱状图 |
 
 ---
 

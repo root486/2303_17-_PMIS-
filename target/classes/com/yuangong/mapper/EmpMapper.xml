@@ -110,5 +110,15 @@
         from emp group by gender
     </select>
 
+    <!--统计各部门员工人数-->
+    <select id="countEmpDeptData" resultType="java.util.Map">
+        select
+            d.name,
+            count(e.id) value
+        from dept d left join emp e on d.id = e.dept_id
+        group by d.id, d.name
+        order by value desc
+    </select>
+
 
 </mapper>
