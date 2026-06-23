@@ -18,7 +18,7 @@ public class JwtTest {
     @Test
     public void testGenerateJwt(){
         Map<String, Object> dataMap = new HashMap<>();
-        dataMap.put("id", 1);
+        dataMap.put("id", 3);
         dataMap.put("username", "admin");
 
         String jwt = Jwts.builder()
@@ -34,7 +34,7 @@ public class JwtTest {
      */
     @Test
     public void testParseJWT(){
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsImV4cCI6MTczMjQzOTc3OH0.6VO9nIGo7UaqzEfQ3F9CT7M1JvSTD1r3Gfp_Lj41a3Q";
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MywidXNlcm5hbWUiOiJhZG1pbiIsImV4cCI6MTc4MTYxNDAyM30.0H1ktAWt9bntOnHiUS8ULceq2ZZi5jorXKZ5U1WwB2I";
         Claims claims = Jwts.parser()
                 .setSigningKey("aXRoZWltYQ==") //指定秘钥
                 .parseClaimsJws(token) //解析令牌

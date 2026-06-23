@@ -47,6 +47,10 @@ public class EmpServiceImpl implements EmpService {
         //1. 保存员工基本信息
         emp.setCreateTime(LocalDateTime.now());
         emp.setUpdateTime(LocalDateTime.now());
+        // 默认角色为普通员工
+        if(emp.getRole() == null){
+            emp.setRole(0);
+        }
         empMapper.insert(emp);
 
         //2. 保存员工工作经历信息
@@ -113,7 +117,7 @@ public class EmpServiceImpl implements EmpService {
             claims.put("username", e.getUsername());
             String jwt = JwtUtils.generateToken(claims);
 
-            return new LoginInfo(e.getId(), e.getUsername(), e.getName(), jwt);
+            return new LoginInfo(e.getId(), e.getUsername(), e.getName(), e.getRole(), jwt);
         }
 
         //3. 不存在, 返回null

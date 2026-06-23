@@ -25,19 +25,19 @@
             <el-icon><HomeFilled /></el-icon>
             <span>工作台</span>
           </el-menu-item>
-          <el-menu-item index="/stats">
+          <el-menu-item index="/stats" v-if="isManager">
             <el-icon><DataAnalysis /></el-icon>
             <span>员工信息统计</span>
           </el-menu-item>
-          <el-menu-item index="/depts">
+          <el-menu-item index="/depts" v-if="isManager">
             <el-icon><OfficeBuilding /></el-icon>
             <span>部门管理</span>
           </el-menu-item>
-          <el-menu-item index="/emps">
+          <el-menu-item index="/emps" v-if="isManager">
             <el-icon><User /></el-icon>
             <span>员工管理</span>
           </el-menu-item>
-          <el-menu-item index="/notices">
+          <el-menu-item index="/notices" v-if="isManager">
             <el-icon><Bell /></el-icon>
             <span>公告管理</span>
           </el-menu-item>
@@ -60,16 +60,21 @@ export default {
   name: 'Layout',
   data() {
     return {
-      userName: ''
+      userName: '',
+      userRole: 0
     }
   },
   created() {
     const user = JSON.parse(localStorage.getItem('user') || '{}')
     this.userName = user.name || '管理员'
+    this.userRole = user.role || 0
   },
   computed: {
     activeMenu() {
       return this.$route.path
+    },
+    isManager() {
+      return this.userRole === 1
     }
   },
   methods: {

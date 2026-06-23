@@ -78,21 +78,29 @@ export default {
         this.$message.warning('请输入部门名称')
         return
       }
+      let res
       if (this.form.id) {
-        await axios.put(`${API}/depts`, this.form)
-        this.$message.success('修改成功')
+        res = await axios.put(`${API}/depts`, this.form)
       } else {
-        await axios.post(`${API}/depts`, this.form)
-        this.$message.success('新增成功')
+        res = await axios.post(`${API}/depts`, this.form)
       }
-      this.dialogVisible = false
-      this.loadData()
+      if (res.data.code === 1) {
+        this.$message.success(this.form.id ? '修改成功' : '新增成功')
+        this.dialogVisible = false
+        this.loadData()
+      } else {
+        this.$message.error(res.data.msg)
+      }
     },
     async handleDelete(id) {
       await this.$confirm('确定删除该部门吗？', '提示', { type: 'warning' })
-      await axios.delete(`${API}/depts`, { params: { id } })
-      this.$message.success('删除成功')
-      this.loadData()
+      const res = await axios.delete(`${API}/depts`, { params: { id } })
+      if (res.data.code === 1) {
+        this.$message.success('删除成功')
+        this.loadData()
+      } else {
+        this.$message.error(res.data.msg)
+      }
     }
   }
 }

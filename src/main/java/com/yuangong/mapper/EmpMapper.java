@@ -22,8 +22,8 @@ public interface EmpMapper {
      * 新增员工基本信息
      */
     @Options(useGeneratedKeys = true, keyProperty = "id") //获取到生成的主键 -- 主键返回
-    @Insert("insert into emp(username, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time)" +
-            " values (#{username}, #{name}, #{gender},#{phone},#{job},#{salary},#{image},#{entryDate},#{deptId},#{createTime},#{updateTime})")
+    @Insert("insert into emp(username, password, name, gender, phone, job, role, salary, image, entry_date, dept_id, create_time, update_time)" +
+            " values (#{username}, #{password}, #{name}, #{gender},#{phone},#{job},#{role},#{salary},#{image},#{entryDate},#{deptId},#{createTime},#{updateTime})")
     void insert(Emp emp);
 
     /**
@@ -61,7 +61,7 @@ public interface EmpMapper {
     /**
      * 查询全部员工
      */
-    @Select("select id, username, password, name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time from emp")
+    @Select("select id, username, password, name, gender, phone, job, role, salary, image, entry_date, dept_id, create_time, update_time from emp")
     List<Emp> findAll();
 
     /**
@@ -73,6 +73,6 @@ public interface EmpMapper {
     /**
      * 根据用户名和密码查询员工信息
      */
-    @Select("select id, username, name from emp where username = #{username} and password = #{password}")
+    @Select("select id, username, name, role from emp where username = #{username} and password = #{password}")
     Emp selectByUsernameAndPassword(Emp emp);
 }

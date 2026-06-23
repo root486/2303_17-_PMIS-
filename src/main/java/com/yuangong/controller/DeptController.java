@@ -28,7 +28,7 @@ public class DeptController {
     }
 
     /**
-     * 删除部门 - 省略@RequestParam (前端传递的请求参数名与服务端方法形参名一致) [推荐]
+     * 删除部门
      */
     @DeleteMapping
     public Result delete(Integer id){

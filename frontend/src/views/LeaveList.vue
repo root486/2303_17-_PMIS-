@@ -3,7 +3,7 @@
     <h2 style="margin-bottom: 16px; color: #303133;">请假管理</h2>
     <el-card style="margin-bottom: 16px;">
       <el-form :inline="true" :model="query">
-        <el-form-item label="姓名">
+        <el-form-item label="姓名" v-if="isManager">
           <el-input v-model="query.name" placeholder="请输入" clearable />
         </el-form-item>
         <el-form-item label="请假类型">
@@ -29,10 +29,10 @@
     <el-card>
       <div style="margin-bottom: 16px;">
         <el-button type="primary" @click="openAdd">申请请假</el-button>
-        <el-button type="danger" :disabled="selectedIds.length === 0" @click="handleBatchDelete">批量删除</el-button>
+        <el-button type="danger" v-if="isManager" :disabled="selectedIds.length === 0" @click="handleBatchDelete">批量删除</el-button>
       </div>
       <el-table :data="tableData" border stripe v-loading="loading" @selection-change="handleSelectionChange">
-        <el-table-column type="selection" width="50" />
+        <el-table-column v-if="isManager" type="selection" width="50" />
         <el-table-column prop="empId" label="员工ID" width="80" />
         <el-table-column prop="empName" label="员工姓名" width="100" />
         <el-table-column label="请假类型" width="90">
@@ -52,9 +52,9 @@
             <el-tag v-else type="danger">已拒绝</el-tag>
           </template>
         </el-table-column>
-        <el-table-column label="操作" width="200" fixed="right">
+        <el-table-column label="操作" :width="isManager ? 200 : 80" fixed="right">
           <template #default="{ row }">
-            <template v-if="row.status === 1">
+            <template v-if="row.status === 1 && isManager">
               <el-button type="success" size="small" @click="handleApprove(row.id, 2)">批准</el-button>
               <el-button type="danger" size="small" @click="handleApprove(row.id, 3)">拒绝</el-button>
             </template>
@@ -75,7 +75,7 @@
 
     <el-dialog title="申请请假" v-model="dialogVisible" width="500px">
       <el-form :model="form" label-width="80px">
-        <el-form-item label="员工ID">
+        <el-form-item v-if="isManager" label="员工ID">
           <el-input-number v-model="form.empId" :min="1" placeholder="请输入员工ID" style="width: 100%;" @change="onEmpIdChange" />
         </el-form-item>
         <el-form-item v-if="empName" label="员工姓名">
@@ -114,7 +114,7 @@ export default {
   name: 'LeaveList',
   data() {
     return {
-      query: { page: 1, pageSize: 10, name: '', leaveType: null, status: null },
+      query: { page: 1, pageSize: 10, name: '', empId: null, leaveType: null, status: null },
       tableData: [],
       total: 0,
       loading: false,
@@ -124,6 +124,14 @@ export default {
       empName: ''
     }
   },
+  computed: {
+    currentUser() {
+      return JSON.parse(localStorage.getItem('user') || '{}')
+    },
+    isManager() {
+      return this.currentUser.role === 1
+    }
+  },
   mounted() {
     this.loadData()
   },
@@ -131,7 +139,11 @@ export default {
     async loadData() {
       this.loading = true
       try {
-        const res = await axios.get(`${API}/leaves`, { params: this.query })
+        const params = { ...this.query }
+        if (!this.isManager) {
+          params.empId = this.currentUser.id
+        }
+        const res = await axios.get(`${API}/leaves`, { params })
         if (res.data.code === 1) {
           this.tableData = res.data.data.rows
           this.total = res.data.data.total
@@ -143,7 +155,7 @@ export default {
       }
     },
     resetQuery() {
-      this.query = { page: 1, pageSize: 10, name: '', leaveType: null, status: null }
+      this.query = { page: 1, pageSize: 10, name: '', empId: null, leaveType: null, status: null }
       this.loadData()
     },
     handleSelectionChange(val) {
@@ -152,6 +164,10 @@ export default {
     openAdd() {
       this.form = { empId: null, leaveType: null, beginDate: null, endDate: null, reason: '' }
       this.empName = ''
+      if (!this.isManager) {
+        this.form.empId = this.currentUser.id
+        this.empName = this.currentUser.name
+      }
       this.dialogVisible = true
     },
     async onEmpIdChange(val) {

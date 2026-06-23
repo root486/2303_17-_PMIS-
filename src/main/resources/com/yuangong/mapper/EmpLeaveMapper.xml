@@ -12,8 +12,11 @@
         from emp_leave el
         left join emp e on el.emp_id = e.id
         <where>
+            <if test="empId != null">
+                el.emp_id = #{empId}
+            </if>
             <if test="name != null and name != ''">
-                e.name like concat('%', #{name}, '%')
+                and e.name like concat('%', #{name}, '%')
             </if>
             <if test="leaveType != null">
                 and el.leave_type = #{leaveType}

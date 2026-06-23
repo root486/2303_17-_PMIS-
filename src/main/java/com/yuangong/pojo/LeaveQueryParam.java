@@ -11,6 +11,7 @@ public class LeaveQueryParam {
     private Integer page = 1;
     private Integer pageSize = 10;
     private String name;
+    private Integer empId;
     private Integer leaveType;
     private Integer status;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -43,6 +44,14 @@ public class LeaveQueryParam {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Integer empId) {
+        this.empId = empId;
     }
 
     public Integer getLeaveType() {
@@ -83,6 +92,7 @@ public class LeaveQueryParam {
                 "page=" + page +
                 ", pageSize=" + pageSize +
                 ", name='" + name + '\'' +
+                ", empId=" + empId +
                 ", leaveType=" + leaveType +
                 ", status=" + status +
                 ", begin=" + begin +

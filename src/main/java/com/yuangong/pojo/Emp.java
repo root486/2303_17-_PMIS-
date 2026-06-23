@@ -15,6 +15,7 @@ public class Emp {
     private Integer gender; //性别, 1:男, 2:女
     private String phone; //手机号
     private Integer job; //职位, 1:班主任,2:讲师,3:学工主管,4:教研主管,5:咨询师
+    private Integer role; //角色, 0:普通员工, 1:管理者
     private Integer salary; //薪资
     private String image; //头像
     private LocalDate entryDate; //入职日期

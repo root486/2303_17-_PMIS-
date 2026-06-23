@@ -38,9 +38,9 @@ export default {
       try {
         const res = await axios.post('/api/login', this.form)
         if (res.data.code === 1) {
-          const { token, id, username, name } = res.data.data
+          const { token, id, username, name, role } = res.data.data
           localStorage.setItem('token', token)
-          localStorage.setItem('user', JSON.stringify({ id, username, name }))
+          localStorage.setItem('user', JSON.stringify({ id, username, name, role }))
           this.$message.success(`欢迎回来，${name}！`)
           this.$router.push('/')
         } else {
